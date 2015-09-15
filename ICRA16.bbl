@@ -5,4 +5,17 @@ D.A. Cohn, Z.~Ghahramani, and M.I. Jordan.
 \newblock Active learning with statistical models.
 \newblock {\em Journal of Artificial Intelligence Research}, 4:129--145, 1996.
 
+\bibitem{hedy2015}
+Hedyeh Rafii-Tari, Alessandro Vandini, Lin Zhang, Archie Hughes-Hallett, and
+  Guang-Zhong Yang.
+\newblock Vision-guided learning by demonstration for adaptive surgical robot
+  control.
+\newblock In {\em Hamlyn Symposium}, pages 39--40, 2015.
+
+\bibitem{van2005guide}
+T.~van Walsum, S.~A~M Baert, and W.J. Niessen.
+\newblock Guide wire reconstruction and visualization in 3{DRA} using monoplane
+  fluoroscopic imaging.
+\newblock {\em IEEE Trans. Med. Imag.}, 24(5):612--623, 2005.
+
 \end{thebibliography}

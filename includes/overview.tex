@@ -24,9 +24,11 @@ We adopt an bimanual sewing approach: the curved needle is first carried by one 
 The motorized needle driver mounted on the robot is shown as Fig.1. This device incorporates a medical used Mayo Hager needle driver. This needle driver is widely used in laparoscopic surgery, the design of which can hold firming a surgical curved needle. The needle driver is motorized for robot to drive it. The design projective is that the needle driver can be controlled without mounting a motor directly on its rotation axis, which may impede the needle driver approaching the sewn object in some direction. This design features two set of constraints/guiding slots working in conjunction with pins. The linear slot lies in the direction along the handle of the needle driver and the constraint slot is coaxial with the needle driver axis; therefore the motor rotation can be mapped to the open and close of the needle driver. To reduce frictions in driving this mechanism, bears are used. One feature of this design is that the two jaws of the needle driver work in an unsynchronized way. In the situation that the needle driver is not fully open, the center line of the grasper is located near one jaw which may create difficulty in approaching a target point and grasp precisely. One method to solve this disadvantage is to replace the linear guiding slot with slot with a critical geometry.
 
 \subsection{Vision System}
-As mentioned above, the needle is manipulate between two robots. During the sewing task, defect can easily occur by the slip between the needle and the needle drivers. This usually happen during the passing stage: when one robot pass the needle to another, small displacement of the optimal relative pose between the needle and the needle driver can occur. We use a stereo vision system to monitor the process and measure the displacements. Adaptive robot movements are then generated to compromise these small displacements and deliver the needle to the correct spot.
+As mentioned above, the needle is manipulated between two robots. During the sewing task, defect can easily occur by the slippage of the needle on the needle drivers. This usually happens during the passing stage: when one robot passes the needle to another, small displacements of the optimal relative pose between the needle and the needle driver can occur. We use a stereo vision system to monitor the process and measure the displacements. Adaptive robot movements are then generated to cope with these small displacements and deliver the needle to the target.
 
-Needle tracking / re-detection
+First, the needle is detected in each stereo image using the needle detection algorithm proposed in \cite{hedy2015}. For this purpose, a feature image, i.e. $I_H$, based on the analysis of the eigenvalues of the Hessian matrix \cite{van2005guide} is computed to enhance curvilinear structure in the image. Assuming that a calibrated imaging system is available, the 3D points of the needle defined by its \emph{ideal} pose are projected in the image plane. This is performed in order to include a prior information of needle's shape in the detection algorithm. Although the \emph{ideal} pose of the needle is usually different from its real one due to slippage, it still represents of a good guess of the needle pose. Thus, small straight segments are detected in $I_H$, and only segments that are close to the projected needle and have similar orientation are considered as needle's parts. Finally, these segments are combined in order to create a continuous curve that represents the detected needle in the images. To improve the detection of the needle, the needle driver is also detected in the images using color-base segmentation in HSV space. This allows the reduction of false positive detections of needle segments which are mainly caused by the presence of the needle driver.
+
+The 3D reconstruction of the needle is performed by triangulating the detected needle points of the stereo image pairs. In the current setup, a section of the needle is occluded, however, in the images due to the presence of the needle driver. To overcome the occlusion and to estimate the new needle pose a discretization of the reconstructed needle and the needle defined by the \emph{ideal} position is performed. Starting from the needle tip, points are sampled along the needle shape at distance equal to the arch length of $1$ millimetre generating a set of equidistant 3D points, defined by $N_{ide}$ for the ideal and $N_{est}$ for the reconstructed needle, respectively. Finally, a rigid transformation that best maps the two set of points $N_{ide}$ and $N_{est}$, i.e. the \emph{new} needle pose, is calculated using ...
 
 \subsection{Learning from human demonstration}
 Hand sewing is an delicate task and programming the robot to do sewing task is time-stacking. We adopt an learning for human demonstration approach for this task. Our learning starts by demonstrating to the robot multiple times how to make a stitch. A $Gaussian Mixture Model$ (GMM)~\cite{cohn1996active} is used to encode the sewing motion and the generalised motion is then retrieved via $Gaussian Mixture Regression$ (GMR). Generally speaking, this learning process involves three phases:
@@ -153,7 +155,6 @@ and
 The relative posture between the needle driver and the needle may change during task execution. This situation happen frequently during needle regrasping procedure, in which the needle may not in its original place during demonstration. To keep the learned needle trajectory and perform fabric piercing precisely, the robot end-effector trajectory needs to be modified in order to adapt to the new needle posture, so each time before performing fabric piercing, needle pose estimation is performed using the stereo vision system and the relative transformation between the ideal needle posture and actual needle posture is calculated. Using the hand-eye calibration matrix, a new robot end-effector trajectory can be achieved.
 
 
-
 \begin{figure}
 \centering
 {
@@ -178,4 +179,28 @@ The relative posture between the needle driver and the needle may change during 
 \label{fig:overview}
 }
 \end{figure}
+
+\subsection{Vision}
+
+The shape reconstruction error, $Dist(S_{gt}, S_{est})$, between the estimated shape, $S_{est}$, with respect to the ground truth shape, $S_{gt}$, is defined in \cite{van2005guide} as:
+\begin{eqnarray}
+Dist(S_{gt}, S_{est}) = \frac{1}{w + f} \Biggl( \sum_{i=1}^{w} d_{min}(S_{gt}(i), S_{est}) \nonumber \\ 
++ \sum_{j=1}^{f} d_{min}(S_{est}(j), S_{gt}) \Biggr)
+\end{eqnarray}
+where $d_{min}(S_{gt}(i), S_{est})$ is the distance between the $i^{th}$ point of $S_{gt}$  to the closest point on $S_{est}$, while $w$ and $f$ are the number of points of $S_{gt}$ and $S_{est}$, respectively.
+
+\begin{table}[!]
+\setlength{\tabcolsep}{3pt}
+\centering
+\caption{Overall Shape and Tip Reconstruction Errors ($\mu \pm \sigma$)}
+\begin{tabular}{ l | c c |}
+\hline
+\multicolumn{1}{ |c| } {\textbf{Experiments}} & \textbf{Shape Errors [mm]} & \textbf{Tip Errors [mm]} \\
+\hline
+\multicolumn{1}{ |c| } {Experiment1}				& $1.49 \pm 0.84$ & $1.25 \pm 0.67$ \\
+\multicolumn{1}{ |c| } {Experiment2}  				& $\textbf{0.83} \pm 0.34$ & $0.96 \pm 0.44$ \\
+\hline
+\end{tabular}
+\label{tab:ErrorsExperimentsShape}
+\end{table} 
 
