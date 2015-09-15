@@ -1,9 +1,8 @@
 \begin{thebibliography}{1}
 
-\bibitem{bidan2013grasp}
-Bidan Huang, Sahar El-Khoury, Miao Li, Joanna~J. Bryson, and Aude Billard.
-\newblock Learning a real time grasping strategy.
-\newblock In {\em Robotics and Automation (ICRA), 2013 IEEE International
-  Conference on}, pages 593--600, 2013.
+\bibitem{cohn1996active}
+D.A. Cohn, Z.~Ghahramani, and M.I. Jordan.
+\newblock Active learning with statistical models.
+\newblock {\em Journal of Artificial Intelligence Research}, 4:129--145, 1996.
 
 \end{thebibliography}

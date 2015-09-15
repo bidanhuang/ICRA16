@@ -11,18 +11,7 @@
                                                           % needed if you want to
                                                           % use the \thanks command
 \overrideIEEEmargins
-% See the \addtolength command later in the file to balance the column lengths
-% on the last page of the document
 
-
-
-% The following packages can be found on http:\\www.ctan.org
-%\usepackage{graphics} % for pdf, bitmapped graphics files
-%\usepackage{epsfig} % for postscript graphics files
-%\usepackage{mathptmx} % assumes new font selection scheme installed
-%\usepackage{times} % assumes new font selection scheme installed
-%\usepackage{amsmath} % assumes amsmath package installed
-%\usepackage{amssymb}  % assumes amsmath package installed
 \usepackage[cmex10]{amsmath}
 %\usepackage[belowskip=-4pt, aboveskip=-0pt]{caption}
 \usepackage{graphics} % for pdf, bitmapped graphics files
@@ -37,6 +26,9 @@
 \usepackage{array}
 \usepackage{bm}
 \usepackage{cite}
+%\usepackage{natbib}
+%\usepackage{titlesec}
+
 \title{\LARGE \bf
 {Vision guided learning based bimanual robot sewing}
 }
@@ -75,12 +67,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-~\cite{bidan2013grasp} 
+
 \input{includes/introduction}
 \input{includes/overview}
 \input{includes/experiments}
-\input{includes/conclusion}
-
+%\input{includes/conclusion}
 
 
 \bibliographystyle{plain}
@@ -88,4 +79,4 @@
 
 
 \end{document}
-\end{document}
+\end{document} 

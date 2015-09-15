@@ -1,9 +1,33 @@
 \section{Experiments}
 
 \subsection{System setup}
+The system is consisted of a robot mounted with a motorized needle driver, a robot mounted with a stent graft sewing mandrel, a fixed position needle driver, a curved needle and a stereo camera (Figure~\ref{}). The system workflow is as below:
+
+\begin{enumerate}
+\item{1}: Needle driver holding needle root
+\item{2}: Vision system detect the needle pose relative to the needle driver
+\item{3}: New robot trajectory is generated according to the needle pose
+\item{4}: Needle driver approaching mandrel 
+\item{5}: Needle piercing into the fabric and the tip piercing out of fabric
+\item{6}: Needle driver releasing the needle root, approaching the needle tip
+\item{7}: Needle driver griping the needle tip and piercing the whole needle out of fabric
+\item{8}: Needle driver bringing the needle to the second needle driver
+\item{9}: The second needle driver griping the middle of the needle, the first needle driver griping the root of the needle
+\end{enumerate}
+
+% Stereo system
+The stereo system is consisted of two identical Logitch HD cameras. The cameras are fixed on a tripod and are about 10$cm$ distance from each other. Stereo calibration and points triangulation are done by use the OpenCV. The calibration accuracy is measured by using the triangulation results to measure distance between two feature points on the camera view. The error is 0.89 $mm$.
+
+The camera frame is registered to the robot frame by hand eye calibration. During the calibration, a key dot pattern is fixed on a know position of the robot end effector, whose origin is aligned with the end effector origin. The robot moves the key dots around and records the end key dot pattern positions in the robot frame, as well as in the camera frame. The rigid transformation between these two set of positions are computed by using the singular value decomposition technique. This transformation is hence the transformation from the robot frame to the camera frame. We mount the motorized needle driver on the end effector and register the tip pose to the robot. With the result of the hand eye calibration, the needle driver pose in the camera frame is computed.
+
+The needle is initially grip at the very end of the needle driver and we assume that only small displacement of the needle pose will occur during the sewing task. The needle driver tip position is hence used as a prior of the needle position. 
 
 \subsection{Human demonstration}
+For teaching robot the sewing task, we carry out four demonstrations. All demonstrations starts from the same position and pierce the same stitch on the fabric. The demonstrations are segmented into 3 primitive movements, according to the needle drive open and close even. Figure~\ref{} shows the demonstrated trajectories. 
 
 \subsection{Learning}
+GMM is used to learn model for each primitive movements. 
 
+
+Figure~\ref{fig:GMR} show the regression result of the trajectory.
 \subsection{Task execution}
