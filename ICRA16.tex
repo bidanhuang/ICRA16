@@ -30,27 +30,15 @@
 %\usepackage{titlesec}
 
 \title{\LARGE \bf
-{Vision guided learning based bimanual robot sewing}
+{Vision guided learning based intelligent sewing system}
 }
 
-%\author{ \parbox{3 in}{\centering Huibert Kwakernaak*
-%         \thanks{*Use the $\backslash$thanks command to put information here}\\
-%         Faculty of Electrical Engineering, Mathematics and Computer Science\\
-%         University of Twente\\
-%         7500 AE Enschede, The Netherlands\\
-%         {\tt\small h.kwakernaak@autsubmit.com}}
-%         \hspace*{ 0.5 in}
-%         \parbox{3 in}{ \centering Pradeep Misra**
-%         \thanks{**The footnote marks may be inserted manually}\\
-%        Department of Electrical Engineering \\
-%         Wright State University\\
-%         Dayton, OH 45435, USA\\
-%         {\tt\small pmisra@cs.wright.edu}}
-%}
-
-\author{
-\thanks{}
-}
+\author{Bidan Huang,
+        Alessandro Vandini,
+        Yang Hu,
+        Guang-Zhong~Yang,~\IEEEmembership{Fellow,~IEEE}
+\thanks{B. Huang, A. Vandini, Y. Hu and G.-Z. Yang are with the Hamlyn Centre for Robotic Surgery, Imperial College London, SW7 2AZ, London, UK (e-mail: b.huang@imperial.ac.uk). Bidan Huang and Yang Hu was supported by the EPSRC (EP/L020688/1).
+}}
 
 %\usepackage{caption}
 %\setlength{\intextsep}{5pt plus 0pt minus 0pt}
@@ -62,7 +50,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
-
+This paper presents an intelligent sewing system for personalized stent graft manufacturing. Hand sewing is a challenging task for robotics, as it requires a high level dexterity and accuracy. Inspired by the medical suturing robots, we use a curved needle to achieve the task. We motorize a needle driver and attach it to a 7 d.o.f robot arm to manipulate the needle. Learning from demonstration approach is used to program the robot to sew the sent in the fabric. The demonstrated sewing skill is firstly segmented to several phases, and is encoded by statistical models. Robot sewing movements are generated from the models and are used for task execution. During the execution, a stereo vision system is adopted and guide the robot to adjust the learnt movement according to the needle pose. The system is implemented on a real robot system. We presents two experiments with this system and analyse the result experiment quantitatively. We show that our approach can robustly perform sewing with the same quality, as well as adapt to various needle pose.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,7 +59,7 @@
 \input{includes/introduction}
 \input{includes/overview}
 \input{includes/experiments}
-%\input{includes/conclusion}
+\input{includes/conclusion}
 
 
 \bibliographystyle{plain}

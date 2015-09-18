@@ -1,9 +1,72 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{cohn1996active}
 D.A. Cohn, Z.~Ghahramani, and M.I. Jordan.
 \newblock Active learning with statistical models.
 \newblock {\em Journal of Artificial Intelligence Research}, 4:129--145, 1996.
+
+\bibitem{iyer2013single}
+Srikrishna Iyer, Thomas Looi, and James Drake.
+\newblock A single arm, single camera system for automated suturing.
+\newblock In {\em Robotics and Automation (ICRA), 2013 IEEE International
+  Conference on}, pages 239--244. IEEE, 2013.
+
+\bibitem{jackson2013needle}
+Russell~C Jackson and M~Cenk Cavusoglu.
+\newblock Needle path planning for autonomous robotic surgical suturing.
+\newblock In {\em Robotics and Automation (ICRA), 2013 IEEE International
+  Conference on}, pages 1669--1675. IEEE, 2013.
+
+\bibitem{kapoor2008constrained}
+Ankur Kapoor and Russell~H Taylor.
+\newblock A constrained optimization approach to virtual fixtures for
+  multi-handed tasks.
+\newblock In {\em Robotics and Automation, 2008. ICRA 2008. IEEE International
+  Conference on}, pages 3401--3406. IEEE, 2008.
+
+\bibitem{koustoumpardis2006intelligent}
+Panagiotis Koustoumpardis, Nikos Aspragathos, and Paraskevi Zacharia.
+\newblock {\em Intelligent robotic handling of fabrics towards sewing}.
+\newblock INTECH Open Access Publisher, 2006.
+
+\bibitem{kudo2000multi}
+Makoto Kudo, Yasuo Nasu, Kazuhisa Mitobe, and Branislav Borovac.
+\newblock Multi-arm robot control system for manipulation of flexible materials
+  in sewing operation.
+\newblock {\em Mechatronics}, 10(3):371--402, 2000.
+
+\bibitem{leonard2014smart}
+Simon Leonard, Kyle~L Wu, Yonjae Kim, Alexandra Krieger, and Peter~CW Kim.
+\newblock Smart tissue anastomosis robot (star): A vision-guided robotics
+  system for laparoscopic suturing.
+\newblock {\em Biomedical Engineering, IEEE Transactions on}, 61(4):1305--1317,
+  2014.
+
+\bibitem{lo2002trip}
+Diego Lo, Paulo~RS Mendon{\c{c}}a, Andy Hopper, et~al.
+\newblock Trip: A low-cost vision-based location system for ubiquitous
+  computing.
+\newblock {\em Personal and Ubiquitous Computing}, 6(3):206--219, 2002.
+
+\bibitem{mayer2008system}
+Hermann Mayer, Faustino Gomez, Daan Wierstra, Istvan Nagy, Alois Knoll, and
+  J{\"u}rgen Schmidhuber.
+\newblock A system for robotic heart surgery that learns to tie knots using
+  recurrent neural networks.
+\newblock {\em Advanced Robotics}, 22(13-14):1521--1537, 2008.
+
+\bibitem{nageotte2005circular}
+Florent Nageotte, Philippe Zanne, Michel De~Mathelin, and Christophe Doignon.
+\newblock A circular needle path planning method for suturing in laparoscopic
+  surgery.
+\newblock In {\em Robotics and Automation, 2005. ICRA 2005. Proceedings of the
+  2005 IEEE International Conference on}, pages 514--519. IEEE, 2005.
+
+\bibitem{padoy2011human}
+Nicolas Padoy and Gregory~D Hager.
+\newblock Human-machine collaborative surgery using learned models.
+\newblock In {\em Robotics and Automation (ICRA), 2011 IEEE International
+  Conference on}, pages 5285--5292. IEEE, 2011.
 
 \bibitem{hedy2015}
 Hedyeh Rafii-Tari, Alessandro Vandini, Lin Zhang, Archie Hughes-Hallett, and
@@ -11,6 +74,40 @@ Hedyeh Rafii-Tari, Alessandro Vandini, Lin Zhang, Archie Hughes-Hallett, and
 \newblock Vision-guided learning by demonstration for adaptive surgical robot
   control.
 \newblock In {\em Hamlyn Symposium}, pages 39--40, 2015.
+
+\bibitem{schrimpf2014velocity}
+Johannes Schrimpf, Magnus Bjerkeng, and Geir Mathisen.
+\newblock Velocity coordination and corner matching in a multi-robot sewing
+  cell.
+\newblock In {\em Intelligent Robots and Systems (IROS 2014), 2014 IEEE/RSJ
+  International Conference on}, pages 4476--4481. IEEE, 2014.
+
+\bibitem{schrimpf2012experiments}
+Johannes Schrimpf and Lars~Erik Wetterwald.
+\newblock Experiments towards automated sewing with a multi-robot system.
+\newblock In {\em Robotics and Automation (ICRA), 2012 IEEE International
+  Conference on}, pages 5258--5263. IEEE, 2012.
+
+\bibitem{schrimpf2012real}
+Johannes Schrimpf, Lars~Erik Wetterwald, and Morten Lind.
+\newblock Real-time system integration in a multi-robot sewing cell.
+\newblock In {\em Intelligent Robots and Systems (IROS), 2012 IEEE/RSJ
+  International Conference on}, pages 2724--2729. IEEE, 2012.
+
+\bibitem{staub2010automation}
+Christoph Staub, Takayuki Osa, Alois Knoll, and Robert Bauernschmitt.
+\newblock Automation of tissue piercing using circular needles and vision
+  guidance for computer aided laparoscopic surgery.
+\newblock In {\em Robotics and Automation (ICRA), 2010 IEEE International
+  Conference on}, pages 4585--4590. IEEE, 2010.
+
+\bibitem{van2010superhuman}
+Jur Van Den~Berg, Stephen Miller, Daniel Duckworth, Humphrey Hu, Andrew Wan,
+  Xiao-Yu Fu, Ken Goldberg, and Pieter Abbeel.
+\newblock Superhuman performance of surgical tasks by robots using iterative
+  learning from human-guided demonstrations.
+\newblock In {\em Robotics and Automation (ICRA), 2010 IEEE International
+  Conference on}, pages 2074--2081. IEEE, 2010.
 
 \bibitem{van2005guide}
 T.~van Walsum, S.~A~M Baert, and W.J. Niessen.
